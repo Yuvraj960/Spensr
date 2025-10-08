@@ -1,0 +1,337 @@
+/* Savings Container */
+.savings-container {
+    display: grid;
+    gap: 2rem;
+}
+
+/* Savings Form */
+.savings-form {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.savings-form .card__body {
+    padding: 2rem;
+}
+
+.savings-form h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.savings-form h3::before {
+    content: '💰';
+    font-size: 1.5rem;
+}
+
+.savings-form .form-control {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* Savings Summary */
+.savings-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.savings-card {
+    background: linear-gradient(135deg, var(--success-color), #7FB069);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.savings-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.savings-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.savings-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.savings-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.savings-percentage {
+    font-size: 1.25rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Savings Goal */
+.savings-goal {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.savings-goal .card__body {
+    padding: 2rem;
+}
+
+.savings-goal h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.savings-goal h3::before {
+    content: '🎯';
+    font-size: 1.5rem;
+}
+
+.goal-progress {
+    margin-top: 1.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    height: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--border-radius);
+    transition: width 0.6s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: progressShine 2s infinite;
+}
+
+@keyframes progressShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Savings Chart */
+.savings-container .chart-container {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    height: 400px;
+}
+
+.savings-container .chart-container h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.savings-container .chart-container h3::before {
+    content: '📈';
+    font-size: 1.5rem;
+}
+
+/* Savings Tips */
+.savings-tips {
+    background: linear-gradient(135deg, var(--info-color), #5A67D8);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    margin-top: 2rem;
+}
+
+.savings-tips h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.savings-tips h3::before {
+    content: '💡';
+    font-size: 1.5rem;
+}
+
+.savings-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.savings-tips li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.savings-tips li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--warning-color);
+    font-weight: bold;
+}
+
+/* Monthly Breakdown */
+.monthly-breakdown {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+.monthly-breakdown h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 0.75rem;
+    transition: var(--transition);
+}
+
+.breakdown-item:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.breakdown-label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.breakdown-value {
+    font-weight: 700;
+    color: var(--success-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .savings-container {
+        gap: 1.5rem;
+    }
+    
+    .savings-summary {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .savings-card {
+        padding: 1.5rem;
+    }
+    
+    .savings-amount {
+        font-size: 2rem;
+    }
+    
+    .savings-form .card__body,
+    .savings-goal .card__body {
+        padding: 1.5rem;
+    }
+    
+    .savings-container .chart-container {
+        height: 300px;
+        padding: 1.5rem;
+    }
+    
+    .savings-tips {
+        padding: 1.5rem;
+    }
+    
+    .monthly-breakdown {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .savings-card {
+        padding: 1rem;
+    }
+    
+    .savings-amount {
+        font-size: 1.75rem;
+    }
+    
+    .breakdown-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .breakdown-value {
+        align-self: flex-end;
+    }
+    
+    .savings-form .card__body,
+    .savings-goal .card__body {
+        padding: 1rem;
+    }
+    
+    .savings-container .chart-container {
+        padding: 1rem;
+        height: 250px;
+    }
+}
